@@ -16,11 +16,11 @@ public abstract class Utente implements UserDetails {
     private String nome;
     private  String email;
     private  String password;
-    @OneToMany(mappedBy = "utenteDestinatario")
+    @OneToMany(mappedBy = "utenteDestinatario",cascade = CascadeType.REMOVE)
     private List<Recensione> recensioniRicevute;
-    @OneToMany(mappedBy = "utenteRecensore")
+    @OneToMany(mappedBy = "utenteRecensore",cascade = CascadeType.REMOVE)
     private List<Recensione> recensioniLasciate;
-    @OneToMany(mappedBy = "utente")
+    @OneToMany(mappedBy = "utente",cascade = CascadeType.REMOVE)
     private List<Notifica> notifiche;
     private String comune;
     private String regione;

@@ -23,9 +23,9 @@ public class Annuncio {
     private String Titolo;
     private String descrizione;
     private String nomeStruttura;
-    @OneToMany(mappedBy = "annuncio")
+    @OneToMany(mappedBy = "annuncio",cascade = CascadeType.REMOVE)
     private List<Notifica> notifiche;
-    @OneToMany(mappedBy = "annuncio")
+    @OneToMany(mappedBy = "annuncio",cascade = CascadeType.REMOVE)
     private List<Candidatura> candidature;
     private int numeroCandidati;
     private int paga;
